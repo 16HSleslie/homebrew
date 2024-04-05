@@ -18,6 +18,18 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/game.html', (req, res) => {
+    const route = path.join(__dirname, '/pages/game.html');
+    res.sendFile(route, (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Sent: index.html')
+        }
+    });
+});
+
+
 app.listen(port, () => {
     console.log(`Server is running at https://${hostname}:${port}`);
 });
