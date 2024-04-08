@@ -6,7 +6,7 @@
     <title>Home Brew</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="onPageLoad()">
     <div class="navbar-container">
         <div class="navbar">
             <h2>Home Brew</h2>
@@ -19,5 +19,15 @@
             </nav>
         </div>
     </div>
+    <main class="game-main-container">
+        <div class="game-container">
+            <h1>Guess the Home Brew song</h1>
+            <img id="albumCover">
+            <audio id="audioSound" controls></audio>
+            <input type="text" name="textBox" id="guessInputBox" placeholder="Answer">
+            <button onclick="changeSong()" type="button" id="guessSubmitButton">Submit</button>
+        </div>
+    </main>
+    <script src="/script.js" async></script>
 </body>
 </html>

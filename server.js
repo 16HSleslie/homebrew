@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const fs = require('fs');
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -27,6 +28,13 @@ app.get('/game.html', (req, res) => {
             console.log('Sent: index.html')
         }
     });
+});
+
+app.get('/getSong', (req, res) => {
+    const data = fs.readFileSync('data.json');
+    const song = JSON.parse(data);
+    res.send(JSON.stringify(song));
+    console.log('Sent song data');
 });
 
 
